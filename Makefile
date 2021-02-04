@@ -2,10 +2,10 @@ init:
 	pip install -r requirements.txt
 
 install:
-	python setup.py install
+	mkdir -p build_tmp && python setup.py install --record build_tmp/dependencies.txt
 
 uninstall:
-	pip uninstall hydra
+	xargs rm -rf < build_tmp/dependencies.txt
 
 test:
 	py.test tests
