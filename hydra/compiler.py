@@ -2,6 +2,7 @@ import ast
 import inspect
 import textwrap
 from .utils import *
+from .import_utils import *
 import os
 
 
@@ -38,3 +39,11 @@ class HydraCompiler:
     # get module body
     ast_fdef = ast_root.body[0]
     vlog('dump ast_function_def = ', ast.dump(ast_fdef, include_attributes=True))
+
+    # TODO find out do what
+    import funcsigs
+    f_signature = funcsigs.signature(func)
+    print(f_signature)
+    f_params = f_signature.parameters
+    print(f_params)
+

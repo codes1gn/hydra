@@ -1,1 +1,2 @@
-numpy
+numpy==1.16.6
+funcsigs==1.0.2

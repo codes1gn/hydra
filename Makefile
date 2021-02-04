@@ -4,7 +4,10 @@ init:
 install:
 	python setup.py install
 
+uninstall:
+	pip uninstall hydra
+
 test:
 	py.test tests
 
-.PHONY: init install
+.PHONY: init install uninstall
